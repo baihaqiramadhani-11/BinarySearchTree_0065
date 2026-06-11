@@ -35,7 +35,7 @@ public:
         Node *newNode = new Node(element, NULL, NULL);
 
         newNode->info = element;
-        newNode->leftchild = NULL;
+        newNode->lelftchild = NULL;
         newNode->rightchild = NULL;
 
         Node *parent = NULL;
@@ -51,7 +51,7 @@ public:
 
         if (element < parent->info)
         {
-            parent->leftchild = newNode;
+            parent->lelftchild = newNode;
         }
         else if (element > parent->info)
         {
@@ -72,7 +72,7 @@ public:
                 parent = currentNode;
 
                 if (element < currentNode->info)
-                    currentNode = currentNode->leftchild;
+                    currentNode = currentNode->lelftchild;
                 else
                     currentNode = currentNode->rightchild;
          }
@@ -88,7 +88,7 @@ public:
 
         if (ptr != NULL)
         {
-            inorder(ptr->leftchild);
+            inorder(ptr->lelftchild);
             cout << ptr->info << " ";
             inorder(ptr->rightchild);
         }
@@ -105,7 +105,7 @@ public:
         if (ptr != NULL)
         {
             cout << ptr->info << " ";
-            preorder(ptr->leftchild);
+            preorder(ptr->lelftchild);
             preorder(ptr->rightchild);
         }
     }
@@ -122,7 +122,7 @@ public:
 
         if (ptr != NULL)
         {
-            postorder(ptr->leftchild);
+            postorder(ptr->lelftchild);
             postorder(ptr->rightchild);
             cout << ptr->info << " ";
         }
